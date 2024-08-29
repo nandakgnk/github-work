@@ -1,0 +1,44 @@
+name: 01 - Building Blocks
+
+
+#on: [push] and workflow_dispatch are event triggers that determine when your workflow should run.
+
+##on: [push]
+####This trigger runs the workflow whenever a push is made to the repository. You can specify branches or tags to narrow down when the workflow should be triggered.
+on: 
+  push:
+    branches:
+      - main
+
+###This trigger allows you to manually trigger the workflow from the GitHub Actions tab in your repository.
+#on:
+#  workflow_dispatch:
+#    inputs:
+#      environment:
+#        description: 'Environment to deploy to'
+#        required: true
+#        default: 'production'
+
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run multiple shell commands
+        run: |
+          echo "Hello"
+          echo "Say Hello"
+          echo "Job 1: Step 3"
+
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run multiple shell commands
+        run: |
+          echo "Good Bye"
+          echo "Job 2: Step 2"
+          echo "Job 2: Step 3"
