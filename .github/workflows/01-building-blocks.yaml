@@ -7,8 +7,6 @@ name: 01 - Building Blocks
 ####This trigger runs the workflow whenever a push is made to the repository. You can specify branches or tags to narrow down when the workflow should be triggered.
 on: 
   push:
-    branches:
-      - main
 
 ###This trigger allows you to manually trigger the workflow from the GitHub Actions tab in your repository.
 #on:
@@ -21,24 +19,19 @@ on:
 
 
 jobs:
-  job1:
+  echo-hello:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Run multiple shell commands
-        run: |
-          echo "Hello"
-          echo "Say Hello"
-          echo "Job 1: Step 3"
+      - name: Say Hello
+        run: echo "Say Hello"
 
-  job2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Run multiple shell commands
+  echo-goodbye:
+    runs-on: ubuntu:latest
+    steps: 
+      - name: "Failed Step"
         run: |
-          echo "Good Bye"
-          echo "Job 2: Step 2"
-          echo "Job 2: Step 3"
+          echo "It will fail"
+          exit 1
+      - name: Say GoodBye
+        run: echo "GoodBye"
+ 
