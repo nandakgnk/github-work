@@ -6,7 +6,7 @@ name: 01 - Building Blocks
 ##on: [push]
 ####This trigger runs the workflow whenever a push is made to the repository. You can specify branches or tags to narrow down when the workflow should be triggered.
 on: 
-  push:
+  workflow_dispatch
 
 ###This trigger allows you to manually trigger the workflow from the GitHub Actions tab in your repository.
 #on:
