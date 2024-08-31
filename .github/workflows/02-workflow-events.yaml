@@ -11,5 +11,5 @@ jobs:
   echo: 
     runs-on: ubuntu-latest 
     steps: 
-      - name: show the trigger 
+      - name: show the trigger t0 me
         run: echo "I've been triggered by a(n) ${{github.event_name}}" ##pinnt the event that trigger name. 
